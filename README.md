@@ -65,6 +65,6 @@ dependencies {
 
 To install the app, follow these steps:
 
-1. Download the app from the Google Play Store.
+1. Download the app from the Google Play Store https://play.google.com/store/apps/details?id=com.fresh.milkaggregatorapplication
 2. Install the app on your Android device.
 3. Launch the app and follow the on-screen instructions to sign up or sign in to your account.
