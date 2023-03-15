@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:background="#F2F7F6"
+    android:layout_height="match_parent"
+    tools:context=".orderDetails">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/selectiontop"
+        >
+
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/backbutton"
+            android:layout_margin="16dp"
+
+            android:id="@+id/backm"
+
+
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+
+            android:fontFamily="@font/urbanist"
+            android:gravity="center"
+
+
+            android:text="Order Details"
+
+            android:textColor="@color/black"
+            android:textSize="20dp"
+
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/backm"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbars="vertical"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectiontop"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+
+
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16sp"
+                android:layout_marginEnd="1dp"
+                android:text="Help"
+                android:textStyle="bold"
+
+                android:textSize="16dp"
+                android:id="@+id/call"
+                android:fontFamily="@font/urbanist"
+                android:textColor="@color/black"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/help"
+
+                app:tint="@color/black" />
+
+
+
+            <ImageView
+                android:id="@+id/help"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16sp"
+
+                android:src="@drawable/support"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:tint="@color/black" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/up5"
+                android:layout_width="250dp"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/help">
+
+
+               <de.hdodenhof.circleimageview.CircleImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/pImage"
+
+
+                   android:src="@drawable/country"
+                   tools:ignore="ContentDescription" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/xy"
+                app:layout_constraintTop_toBottomOf="@+id/up5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Country Eggs"
+                    android:id="@+id/ProductName"
+                    android:textStyle="bold"
+                    android:textFontWeight="600"
+                    android:fontFamily="@font/urbanist"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"/>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/tvFeedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Rate your overall experince"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/urbanist"
+
+
+                        android:textColor="@color/BuyButton" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+
+                        android:orientation="horizontal">
+
+                        <RatingBar
+                            android:id="@+id/rbStars"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/green"
+                            android:numStars="5"
+
+
+                            android:progressBackgroundTint="#C0C0C0"
+                            android:progressTint="@color/green" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    >
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+
+
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="10dp"
+
+
+                        android:hint="Enter Your Feedback">
+
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/input"
+                            android:importantForAutofill="no"
+                            android:gravity="top"
+                            android:textSize="14sp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/urbanist"
+
+
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnSend"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/urbanist"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="@color/green"
+
+
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:padding="10dp"
+
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+
+
+                        android:text="Send Feedback"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    android:layout_marginBottom="10dp"
+
+
+                    android:background="@color/white"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Price Breakup"
+                        android:fontFamily="@font/urbanist"
+
+                        android:textSize="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="5dp"
+                        >
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Whole Milk"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="14dp"
+                            android:id="@+id/namex1"
+                            android:layout_weight="1"
+
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₹"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="16dp"
+
+
+
+                            android:textColor="@color/black"
+                            />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8"
+
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="2dp"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="16dp"
+                            android:id="@+id/priceqty"
+
+                            android:textColor="@color/black"
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="5dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Quantity "
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="14dp"
+
+                            android:layout_weight="1"
+
+                            android:textColor="@color/black"
+                            />
+
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2"
+
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="2dp"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="16dp"
+                            android:id="@+id/qty"
+
+                            android:textColor="@color/black"
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="5dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Delivery Charge"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="14dp"
+
+                            android:layout_weight="1"
+
+                            android:textColor="@color/black"
+                            />
+
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Free Delivery"
+
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="2dp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="16dp"
+
+
+                            android:textColor="@color/BuyButton"
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="5dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GST"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="14dp"
+
+                            android:layout_weight="1"
+
+                            android:textColor="@color/black"
+                            />
+
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1.8"
+
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="2dp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="16dp"
+
+
+                            android:textColor="@color/black"
+                            />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="5dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Order Price "
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="14dp"
+
+                            android:layout_weight="1"
+
+                            android:textStyle="bold"
+
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₹"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="20dp"
+
+
+
+                            android:textColor="#5065AD"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/urbanist"
+                            android:text="17.8"
+                            android:textColor="#5065AD"
+
+                            android:textSize="20dp" />
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    android:layout_marginBottom="10dp"
+
+
+                    android:background="@color/white"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery Address"
+                        android:fontFamily="@font/urbanist"
+                        android:id="@+id/test"
+                        android:textSize="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="5dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PersonName"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="14dp"
+                            android:id="@+id/namex"
+                            android:textStyle="bold"
+
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="|"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="14dp"
+                            android:layout_marginStart="10dp"
+
+
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PhoneNo"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/urbanist"
+                            android:textSize="14dp"
+                            android:textStyle="bold"
+                            android:id="@+id/phonex"
+
+                            android:textColor="@color/black"
+                            />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Charaideo mens hostel, Tezpur University, Nappam, Tezpur-784028"
+
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/addressx"
+                        android:fontFamily="@font/urbanist"
+                        android:layout_marginBottom="10dp"
+                        android:textSize="14dp"
+
+                        android:textColor="@color/black"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

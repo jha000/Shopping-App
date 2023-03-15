@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "602927643669",
+    "project_id": "fresh-yard",
+    "storage_bucket": "fresh-yard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602927643669:android:8dfa9eccb1a7d4dda7e21c",
+        "android_client_info": {
+          "package_name": "com.fresh.milkaggregatorapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "602927643669-m98435oeu4jgunlae3htqctriuhc6br0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fresh.milkaggregatorapplication",
+            "certificate_hash": "463e93daf8c7da8fa90ef90b4480866b9204855d"
+          }
+        },
+        {
+          "client_id": "602927643669-9rtqopdulqif33uiu0j138l9780jdctk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqdc7KcUuh5wLdS1FMvejO3IEPk3ZD14M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "602927643669-9rtqopdulqif33uiu0j138l9780jdctk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

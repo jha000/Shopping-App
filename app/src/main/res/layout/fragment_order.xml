@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#F2F7F6"
+    android:layout_height="match_parent"
+    tools:context=".orderFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/selectiontop"
+        >
+
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/urbanist"
+            android:gravity="left"
+            android:text="Generate"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            app:tint="@color/black"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/orderdetails"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:id="@+id/test"
+            android:layout_marginBottom="16dp"
+
+            android:clickable="true"
+            android:textFontWeight="600"
+
+            android:fontFamily="@font/urbanist"
+            android:gravity="left"
+            android:layout_gravity="center_vertical"
+
+
+            android:text="Orders"
+
+            android:textColor="@color/black"
+            android:textSize="16dp"
+
+
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        tools:listitem="@layout/item"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="60dp"
+        android:visibility="visible"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectiontop"
+ />
+
+
+    <ImageView
+        android:id="@+id/empty"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:src="@drawable/emptyrem"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectiontop"
+        tools:ignore="MissingConstraints" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

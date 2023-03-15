@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="teal_200">@color/BuyButton</color>
+    <color name="green">#2C856B</color>
+    <color name="BuyButton">#2C856B</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#403E3A</color>
+    <color name="grey">#44464D</color>
+    <color name="blue">#5065AD</color>
+
+
+</resources>
