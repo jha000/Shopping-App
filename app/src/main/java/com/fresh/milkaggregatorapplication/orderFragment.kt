@@ -21,10 +21,10 @@ class orderFragment : Fragment() {
     private var test: ImageView? = null
     private var no: TextView? = null
     private var viewmodal: ViewModal? = null
-//
-//    var list: ArrayList<User>? = null
+
+    var list: ArrayList<User>? = null
     var database: DatabaseReference? = null
-//    var myAdapter: TransferAdapter? = null
+    var myAdapter: MyAdapter? = null
 
 
     override fun onCreateView(
@@ -50,48 +50,59 @@ class orderFragment : Fragment() {
         coursesRV!!.layoutManager = LinearLayoutManager(activity)
         coursesRV!!.setHasFixedSize(true)
 //
-//        database = FirebaseDatabase.getInstance().getReference("test").child(no!!.text.toString())
-//
-//        list = java.util.ArrayList()
-//        myAdapter = TransferAdapter(requireActivity(), list!!)
+        database = FirebaseDatabase.getInstance().getReference("test").child(no!!.text.toString())
 
-        val adapter = CourseRVAdapter()
-        coursesRV!!.adapter = adapter
+        list = java.util.ArrayList()
+        myAdapter = MyAdapter(requireActivity(),list)
+//
+//        val adapter = CourseRVAdapter()
+        coursesRV!!.adapter = myAdapter
 
-//        list!!.clear()
-//
-//        database!!.addValueEventListener(object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                for (dataSnapshot in snapshot.children) {
-//                    val user = dataSnapshot.getValue(User::class.java)
-//                    list!!.add(user!!)
-//                }
-//                myAdapter!!.notifyDataSetChanged()
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//
-//            }
-//        })
+        list!!.clear()
 
-        viewmodal = ViewModelProviders.of(this)[ViewModal::class.java]
-        viewmodal!!.allCourses.observe(requireActivity()) { models ->
-            adapter.submitList(models)
-            if(adapter.currentList.isEmpty()){
-                test!!.visibility=View.VISIBLE
-                coursesRV!!.visibility=View.GONE
-            }
-            else{
-                test!!.visibility=View.GONE
-                coursesRV!!.visibility=View.VISIBLE
+        database!!.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (dataSnapshot in snapshot.children) {
+                    val user = dataSnapshot.getValue(User::class.java)
+                    user?.let {
+                        list!!.add(it)
+                    }
+                }
+                myAdapter!!.notifyDataSetChanged()
+
+                if (list!!.isEmpty()) {
+
+                    // Hide the RecyclerView and show a placeholder image
+                    coursesRV!!.visibility = View.GONE
+                    test!!.visibility = View.VISIBLE
+                } else {
+                    // Hide the placeholder image and show the RecyclerView
+                    test!!.visibility = View.GONE
+                    coursesRV!!.visibility = View.VISIBLE
+                }
+
 
             }
 
-        }
+            override fun onCancelled(error: DatabaseError) {
 
+            }
+        })
 
-
-
+//        viewmodal = ViewModelProviders.of(this)[ViewModal::class.java]
+//        viewmodal!!.allCourses.observe(requireActivity()) { models ->
+//            adapter.submitList(models)
+//            if(adapter.currentList.isEmpty()){
+//                test!!.visibility=View.VISIBLE
+//                coursesRV!!.visibility=View.GONE
+//            }
+//            else{
+//                test!!.visibility=View.GONE
+//                coursesRV!!.visibility=View.VISIBLE
+//
+//            }
+//
+//        }
 
         return view
     }

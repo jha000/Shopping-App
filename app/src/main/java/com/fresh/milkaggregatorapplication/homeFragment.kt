@@ -53,6 +53,7 @@ class homeFragment : Fragment() {
     private val REQUEST_CODE = 100
 
     lateinit var refer: TextView
+    lateinit var cart_badge: TextView
     lateinit var shimmerFrameLayout: ShimmerFrameLayout
     private lateinit var viewmodal: ViewModal
     override fun onCreateView(
@@ -75,6 +76,22 @@ class homeFragment : Fragment() {
         amount2 = view.findViewById(R.id.amount2)
         address = view.findViewById(R.id.address)
         city = view.findViewById(R.id.city)
+
+        val cart1 = view.findViewById<ImageView>(R.id.cart)
+
+        cart1.setOnClickListener{
+            val i= Intent(activity, cart::class.java)
+            startActivity(i)
+        }
+
+        cart_badge = view.findViewById(R.id.cart_badge)
+
+        cart_badge.setOnClickListener{
+            val i= Intent(activity, cart::class.java)
+            startActivity(i)
+        }
+
+
 //
 //        val animation = AnimationUtils.loadAnimation(context, R.anim.shake)
 //        view.startAnimation(animation)
@@ -116,6 +133,8 @@ class homeFragment : Fragment() {
             requireActivity().getSharedPreferences("myKey", Context.MODE_PRIVATE)
         val value2 = sharedPreferences.getString("saveCode", null)
         no.text = value2
+        val cartvalue = sharedPreferences.getString("items", null)
+        cart_badge.text = cartvalue
 
         refer.setOnClickListener(View.OnClickListener { view1: View? ->
             try {
@@ -272,6 +291,10 @@ class homeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         getLastLocation()
+        val sharedPreferences =
+            requireActivity().getSharedPreferences("myKey", Context.MODE_PRIVATE)
+        val cartvalue = sharedPreferences.getString("items", null)
+        cart_badge.text = cartvalue
 
     }
 

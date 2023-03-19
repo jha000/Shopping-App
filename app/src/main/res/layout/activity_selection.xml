@@ -24,6 +24,23 @@
         android:visibility="gone"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:id="@+id/mobileget"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/nameget"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -148,8 +165,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
                             android:layout_weight="1"
+                            android:layout_marginEnd="16dp"
                             android:fontFamily="@font/urbanist"
 
                             android:text="FreshYard Country Eggs - Pack Of 6"
@@ -167,51 +184,54 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
+                            android:text="Qty"
                             android:layout_marginEnd="5dp"
 
 
-                            android:fontFamily="@font/urbanist"
+                            android:textStyle="bold"
                             android:letterSpacing="0.1"
-                            android:text="Qty"
-                            android:textColor="@color/black"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/urbanist"
 
 
                             android:textSize="16sp"
 
-                            android:textStyle="bold" />
+                            android:textColor="@color/black"/>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginEnd="16sp"
-                            android:layout_marginBottom="2dp"
-
-
-                            android:background="#F3F8F3"
-                            android:elevation="1dp"
-                            android:gravity="center"
-
-
                             android:orientation="horizontal"
+                            android:layout_marginEnd="16sp"
+                            android:background="#F3F8F3"
+                            android:layout_gravity="center_vertical"
+
+
+                            android:elevation="1dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginTop="2dp"
+
+
+                            android:gravity="center"
 
                             >
 
+
+
                             <ImageView
-                                android:id="@+id/dec"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/dec"
 
-                                android:layout_margin="5dp"
-                                android:background="@drawable/box1"
+                                android:src="@drawable/decrease"
                                 android:gravity="center"
                                 android:padding="2dp"
-                                android:src="@drawable/decrease"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/box1"
 
 
-                                app:tint="@color/white" />
+                                app:tint="@color/white"
+                                />
 
 
                             <TextView
@@ -232,17 +252,19 @@
                                 android:textStyle="normal" />
 
 
+
                             <ImageView
-                                android:id="@+id/inc"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:background="@drawable/box1"
-                                android:gravity="center"
-                                android:padding="2dp"
                                 android:src="@drawable/increase"
+                                android:gravity="center"
+                                android:layout_margin="5dp"
+                                android:id="@+id/inc"
+                                android:padding="2dp"
+                                android:background="@drawable/box1"
 
-                                app:tint="@color/white" />
+                                app:tint="@color/white"
+                                />
 
 
                         </LinearLayout>
@@ -437,48 +459,6 @@
             android:layout_height="1dp"
             android:background="#33403E3A" />
 
-        <TextView
-            android:id="@+id/message1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/urbanist"
-            android:text="*Delivery Address is not set"
-            android:textColor="#E70D0D"
-            android:textFontWeight="600"
-            android:textSize="14dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_baseline_location_on_24"
-
-                app:tint="@color/green" />
-
-            <TextView
-                android:id="@+id/address1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/urbanist"
-                android:hint="Set Delivery Address"
-                android:text="Set Delivery Address"
-                android:textColor="@color/green"
-                android:textColorHint="@color/green"
-                android:textFontWeight="600"
-                android:textSize="20dp" />
-
-        </LinearLayout>
-
 
         <LinearLayout
 
@@ -486,213 +466,101 @@
             android:layout_height="wrap_content"
             android:elevation="10dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints">
 
-            <LinearLayout
-                android:id="@+id/opencart"
+
+            <TextView
+                android:id="@+id/edit1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical">
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/urbanist"
+                android:text=""
+                android:textColor="#5065AD"
+                android:textFontWeight="600"
+                android:textSize="16dp"
 
-                <LinearLayout
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/urbanist"
+                    android:text="*Qty selected : "
+                    android:textColor="@color/black"
+                    android:textFontWeight="600"
+                    android:textSize="16dp" />
 
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/urbanist"
-                        android:text="Total: ₹"
-                        android:textColor="#5065AD"
-                        android:textFontWeight="600"
-                        android:textSize="16dp" />
-
-
-                    <TextView
-                        android:id="@+id/edit1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/urbanist"
-                        android:text=""
-                        android:textColor="#5065AD"
-                        android:textFontWeight="600"
-
-                        android:textSize="16dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/urbanist"
-                        android:text="/-"
-                        android:textColor="#5065AD"
-                        android:textFontWeight="600"
-
-                        android:textSize="16dp" />
-
-                </LinearLayout>
-
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/message1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:alpha="0.5"
-                        android:fontFamily="@font/urbanist"
-                        android:text="GST: ₹"
-                        android:textColor="@color/black"
-                        android:textFontWeight="600"
-                        android:textSize="14dp" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:alpha="0.5"
-                        android:fontFamily="@font/urbanist"
-                        android:text="1.80"
-                        android:textColor="@color/black"
-                        android:textFontWeight="600"
-
-                        android:textSize="14dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:alpha="0.5"
-                        android:fontFamily="@font/urbanist"
-                        android:text="/-"
-                        android:textColor="@color/black"
-                        android:textFontWeight="600"
-
-                        android:textSize="14dp" />
-
-                </LinearLayout>
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/urbanist"
+                    android:text="1"
+                    android:textColor="@color/blue"
+                    android:textFontWeight="600"
+                    android:textSize="16dp" />
 
             </LinearLayout>
 
 
+
+
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginStart="8dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:layout_weight="1"
-                android:onClick="ShowPopup"
+
                 app:cardCornerRadius="10dp">
 
                 <LinearLayout
+                    android:id="@+id/opencart"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/green"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/urbanist"
-                                android:text="₹"
-                                android:textColor="@color/white"
-                                android:textFontWeight="600"
-                                android:textSize="20dp" />
-
-
-                            <TextView
-                                android:id="@+id/grand"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/urbanist"
-                                android:text="7.8"
-                                android:textColor="@color/white"
-                                android:textFontWeight="600"
-
-                                android:textSize="20dp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/urbanist"
-                                android:text="/-"
-                                android:textColor="@color/white"
-                                android:textFontWeight="600"
-
-                                android:textSize="20dp" />
-
-                        </LinearLayout>
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:fontFamily="@font/urbanist"
-                            android:text="Total"
-                            android:textColor="@color/white"
-                            android:textFontWeight="400"
-                            android:textSize="14dp" />
-
-                    </LinearLayout>
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
 
 
                     <TextView
                         android:id="@+id/show"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:fontFamily="@font/urbanist"
                         android:gravity="center"
-                        android:text="Order"
+                        android:text="ADD TO CART"
                         android:textColor="@color/white"
                         android:textFontWeight="600"
-                        android:textSize="20dp"
+                        android:textSize="16dp"
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginEnd="16dp"
-                        android:src="@drawable/next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/cart"
                         app:tint="@color/white" />
 
                 </LinearLayout>

@@ -3,10 +3,15 @@ package com.fresh.milkaggregatorapplication
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 
 class ViewModal(application: Application) : AndroidViewModel(application) {
 
     private val repository: CourseRepository
+
+    private val _courseList = MutableLiveData<List<CourseModal>>()
+    val courseList: LiveData<List<CourseModal>> = _courseList
+
 
     val allCourses: LiveData<List<CourseModal>>
 
@@ -30,5 +35,11 @@ class ViewModal(application: Application) : AndroidViewModel(application) {
 
     fun deleteAllCourses() {
         repository.deleteAllCourses()
+    }
+
+    fun removeCourseAt(position: Int) {
+        val tempList = ArrayList(courseList.value ?: emptyList())
+        tempList.removeAt(position)
+        _courseList.value = tempList
     }
 }

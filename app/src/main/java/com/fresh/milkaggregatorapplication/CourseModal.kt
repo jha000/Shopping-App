@@ -15,6 +15,15 @@ class CourseModal
 
     @ColumnInfo
     var courseDuration: String?,
+
+    @ColumnInfo
+    var namett: String?,
+
+    @ColumnInfo
+    var phonett: String?,
+
+    @ColumnInfo
+    var addresstt: String?,
 ) {
 
     @PrimaryKey(autoGenerate = true)
