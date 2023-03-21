@@ -1,6 +1,6 @@
 # Fresh Yard - Online E-commerce Delivery Application
 
-Fresh Yard is a mobile application built to enable users to purchase products online, get them delivered to their location and track the order. The app also includes features like product authentication, payment gateway, image picker, call support, referral program, and more. The app is built using Kotlin, XML, Material Design, Firebase, Room DB, SharedPreferences, and Geocoder.
+Fresh Yard is a mobile application built to enable users to purchase products online, get them delivered to their location and track the order. The app also includes features like User authentication, payment gateway, image picker, call support, referral program, and more. The app is built using Kotlin, XML, Material Design, Firebase, Room DB, SharedPreferences, and Geocoder.
 
 ## Technologies Used
 
