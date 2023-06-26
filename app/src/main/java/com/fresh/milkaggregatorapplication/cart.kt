@@ -84,7 +84,6 @@ class cart : AppCompatActivity() , PaymentResultListener {
                 adapter.submitList(models)
 
                 viewmodal!!.deleteAllCourses()
-
                 test!!.visibility = View.VISIBLE
                 coursesRV!!.visibility = View.GONE
                 layout!!.visibility=View.GONE

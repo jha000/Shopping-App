@@ -259,7 +259,7 @@ class homeFragment : Fragment() {
                             val addresses: List<Address>? =
                                 geocoder.getFromLocation(location.latitude, location.longitude, 1)
 
-                            address.text = addresses!![0].subLocality + ", " + addresses[0].locality + ", " + addresses[0].adminArea
+                            address.text = addresses!![0].locality + ", " + addresses[0].adminArea
 
                             city.text =  addresses[0].postalCode
 
@@ -278,7 +278,7 @@ class homeFragment : Fragment() {
             askPermission()
         }
     }
-//
+
     private fun askPermission() {
         ActivityCompat.requestPermissions(
             requireActivity(),

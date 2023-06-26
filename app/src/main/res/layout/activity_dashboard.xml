@@ -16,9 +16,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/dashboardbac"
 
-
-
-
         android:layout_alignParentBottom="true"
 
 
